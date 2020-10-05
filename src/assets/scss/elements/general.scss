@@ -1,0 +1,71 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // scrollbar-width: thin;
+    // scrollbar-color: blue orange;
+
+}
+
+:root {
+    // scrollbar-color: $violet !important;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeOut 1.35s;
+    animation-timing-fuction: cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: $background;
+    color: $color;
+    font-family: $f_s;
+    font-weight: 400;
+    height: calc( 100vh - ( #{$unit} * 2 ) );
+    line-height: 1.470;
+    margin: 0;
+    padding: $unit;
+    position: relative;
+    // transition: animation .37s ease-in-out;
+    width: calc( 100vw - ( #{$unit} * 2 ) );
+
+    @include respond(mobile) {
+        // height: 100vh;
+    }
+
+    scrollbar-color: $violet;
+}
+
+a {
+    color: $color;
+}
+
+button {
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: buttonface;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 11px system-ui;
+    padding: 1px 7px 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0) rgba(209, 209, 209, 0) rgba(186, 186, 186, 0);
+    border-image: initial;
+}
+

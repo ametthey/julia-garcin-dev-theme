@@ -1,0 +1,68 @@
+/**
+ * ---------------------------------------------------------------------------------
+ * ITCSS methodology
+ * https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+ *
+ * rule n°1 : no ID's in css
+ * rule n°2 : we build components (modules) / everything should be discrete, self
+ * contained pices of UI as reusable components.
+ * rule n°3 : ITCSS is class-based archtecture
+ * rule n°4 : We go from generic to explicit (du plus grand au plus petit)
+ * low specificity > high specificity
+ *
+ * partials: les différents fichiers des différentes parties (settings, tools et co)
+ *
+ * ----------------------------------------------------------------------------------
+ * BEM methodology
+ *
+ * .block {} // Block
+ * .block__element {} // Element
+ * .block--modifier {} // Modifier
+ *
+ * ex:
+ * .container-project // Block
+ * .container-project__title // Element
+ * .container-project--big // Modifier
+ *
+ *
+ *
+ * ******/
+
+
+// SETTINGS
+@import 'settings/global.scss'; // GLOBAL SETTINGS, variables for everything (font-size, line-height, media queries, etc etc)
+
+// TOOLS
+@import 'tools/mixins.scss'; // mixins and functions, not so much for now :( (font-sizing mixins, gradient mixins)
+@import 'tools/fonts.scss';
+
+// GENERIC
+@import 'generic/normalize.scss'; // normalize.css, box-sizing rules, reset.css
+@import 'generic/reset.scss'; // normalize.css, box-sizing rules, reset.css
+
+// ELEMENTS
+@import 'elements/general.scss'; // classic html tag (body, p, a, h1 and so on)
+@import 'elements/headings.scss'; // classic html tag (body, p, a, h1 and so on)
+
+// OBJECTS
+/*
+ * classes for aligning images and blocks elements from codex
+ * https://codex.wordpress.org/CSS
+ */
+@import 'objects/wp-generated-classes.scss';
+@import 'objects/grid.scss'; // wrapper, container, layout
+
+// COMPONENTS
+@import 'components/navigation.scss'; // component or element, MOST OF THE WORK IS HERE
+@import 'components/projects.scss';
+@import 'components/flickity-core.scss';
+@import 'components/gallery.scss';
+// @import 'components/swiper.scss';
+// @import 'components/swiper-core.scss';
+@import 'components/slider.scss';
+@import 'components/message.scss';
+@import 'components/simplebar-core.scss';
+@import 'components/simplebar.scss';
+
+// UTILITIES
+@import 'utilities/helper-classes.scss'; // items, hack, helper classes and ovverides here, can use !important =)

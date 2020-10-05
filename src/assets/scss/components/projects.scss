@@ -1,0 +1,47 @@
+.container__projects {
+    direction: rtl;
+    grid-area: project;
+    padding: 0 $unit;
+    // overflow: scroll;
+    position: relative;
+
+    // scroll bar on the left side https://jsfiddle.net/jasonleonhard/tjwg02wu/
+    .project__item {
+        cursor: pointer;
+        display: block;
+        direction:ltr;
+        // titre du projet
+        line-height: 1;
+        margin-bottom: 1.7rem;
+        text-decoration: none;
+
+        h5 {
+            font-family: $f_p;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            text-transform: uppercase;
+
+            @include respond(hd) {
+                font-size: $title;
+            }
+
+        }
+        // categorie du projet
+        span {
+            font-family: $f_s;
+            position: relative;
+
+            @include respond(hd) {
+                font-size: $p;
+            }
+
+        }
+
+    }
+}
+
+.simplebar-wrapper {
+    height: 100% !important;
+}
+
