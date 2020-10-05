@@ -115,6 +115,12 @@ const clickOutside = project => {
         matchingSection.querySelector('.container_images__gallery').style.opacity = '0';
         container.style.opacity = '1';
         project.classList.remove('is-active');
+
+        // reinitiate the carousel to the first slide for 1s delay
+        setTimeout( function() {
+            carousel.selectCell(0);
+            }, 1000
+        );
     });
 }
 
