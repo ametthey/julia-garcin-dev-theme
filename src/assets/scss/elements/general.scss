@@ -27,7 +27,8 @@ body {
     color: $color;
     font-family: $f_s;
     font-weight: 400;
-    height: calc( 100vh - ( #{$unit} * 2 ) );
+    // height: calc( 100vh - ( #{$unit} * 2 ) );
+    height: calc( 100% - ( #{$unit} * 2 ) );
     line-height: 1.470;
     margin: 0;
     padding: $unit;

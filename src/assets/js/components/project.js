@@ -1,12 +1,5 @@
 import Flickity from 'flickity';
 
-let carousel = new Flickity ('.container_images__gallery', {
-    // autoPlay: 1000,
-    adaptiveHeight: true,
-    lazyLoad: true,
-    pageDots: false
-});
-
 /*
  * https://codepen.io/chriscoyier/pen/XQpqZV
  */
@@ -14,6 +7,20 @@ const project = document.querySelector('.project__item');
 const projects = document.querySelectorAll('.project__item');
 const galleries = document.querySelectorAll('.wrapper__container__images');
 const container = document.querySelector('.container');
+
+// function flickity(item) {
+//     let carousel = new Flickity('.container_images__gallery', {
+//         adaptiveHeight: true,
+//         lazyLoad: true,
+//         pageDots: false
+//     });
+// }
+let carousel = new Flickity('.container_images__gallery', {
+    adaptiveHeight: true,
+    lazyLoad: true,
+    pageDots: false
+});
+
 
 /******************************************************
  * Script for both
@@ -25,7 +32,6 @@ projects.forEach(project => {
         removeActiveProject();
         addActiveProject(project);
         clickOutside(project);
-
     });
     project.addEventListener('mousemove', e => {
         e.preventDefault;
@@ -35,19 +41,8 @@ projects.forEach(project => {
     });
     project.addEventListener('mouseout', e => {
         e.preventDefault;
-        const href = project.getAttribute('href');
-        const matchingSection = document.querySelector(href);
-
-        if (project.classList.contains('is-hover')) {
-            project.classList.remove('is-hover');
-            matchingSection.classList.remove('is-hover');
-            matchingSection.querySelector('.container_images__gallery').style.opacity = '0';
-        }
+        removeSomethingProject(project);
     });
-});
-
-project.addEventListener('click', () => {
-
 });
 
 /******************************************************
@@ -61,6 +56,17 @@ const removeActiveProject = () => {
     galleries.forEach(gallery => {
         gallery.classList.remove('is-active');
     });
+}
+
+const removeSomethingProject = (project) => {
+        const href = project.getAttribute('href');
+        const matchingSection = document.querySelector(href);
+
+        if (project.classList.contains('is-hover')) {
+            project.classList.remove('is-hover');
+            matchingSection.classList.remove('is-hover');
+            matchingSection.querySelector('.container_images__gallery').style.opacity = '0';
+        }
 }
 
 /******************************************************
@@ -85,19 +91,18 @@ const addActiveProject = project => {
 
     // Reduce Opacity On Main Container
     container.style.opacity = '0.1';
-
 }
 
 const clickOutside = project => {
     const href = project.getAttribute('href');
     const matchingSection = document.querySelector(href);
 
-    matchingSection.addEventListener("click", function(evt) {
+    matchingSection.addEventListener("click", function (evt) {
         evt.preventDefault();
 
         // this select the matchingSection child
         let flyoutElement = matchingSection.querySelector('.container_images__gallery'),
-            targetElement = evt.target;  // clicked element
+            targetElement = evt.target; // clicked element
 
         do {
             if (targetElement == flyoutElement) {
@@ -117,10 +122,10 @@ const clickOutside = project => {
         project.classList.remove('is-active');
 
         // reinitiate the carousel to the first slide for 1s delay
-        setTimeout( function() {
+        setTimeout(function () {
             carousel.selectCell(0);
-            }, 1000
-        );
+            console.log('flickity is reinitiate');
+        }, 700);
     });
 }
 

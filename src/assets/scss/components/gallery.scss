@@ -97,7 +97,6 @@
 .container_images__gallery {
     align-self: center;
     grid-area: image;
-    // height: 450px;
     opacity: 0;
     transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
@@ -128,20 +127,16 @@
 
         img {
             height: inherit;
-            // max-width: auto;
         }
     }
 }
 
 .flickity-viewport {
-    // background-color: red;
     grid-area: slider;
-    // height: 100%!important;
     transition: height 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .flickity-button-wrapper {
-    // background-color: red;
     display: flex;
     height: 44px;
     justify-content: space-between;
@@ -171,3 +166,4 @@
 .flickity-page-dots {
     display: none;
 }
+
