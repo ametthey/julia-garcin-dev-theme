@@ -1,0 +1,56 @@
+
+.container_images__gallery {
+    align-self: center;
+    grid-area: image;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 100%;
+
+    @include respond(tablet) {
+        height: auto;
+        margin: 30px auto 0;
+        width: calc( 100% - 60px );
+    }
+
+    .carousel-cell {
+        align-items: center;
+        display: flex;
+        height: 500px;
+        justify-content: center;
+        // width: inherit;
+        width: 100%;
+        margin: auto;
+
+        @include respond(tablet) {
+            align-items: flex-start;
+            height: auto;
+
+            img {
+                height: auto!important;
+                width: 100%;
+
+            }
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .vimeo__container {
+            padding: 56.25% 0 0 0;
+            position: relative;
+            width: 94%;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

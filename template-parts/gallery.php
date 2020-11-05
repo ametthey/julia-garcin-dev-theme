@@ -72,7 +72,6 @@
         <?php } else { ?>
 
         <div class="carousel-cell">
-            <!-- <img class="carousel&#45;cell&#45;image" data&#45;flickity&#45;lazyload="<?php echo $image; ?>" alt=""> -->
             <img src="<?php echo $image; ?>" alt="" class="carousel-cell-image flickity-lazyload">
         </div>
 

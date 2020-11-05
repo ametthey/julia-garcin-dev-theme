@@ -1,0 +1,37 @@
+// Gallery Information
+.container_images__info {
+    order: 2;
+    align-items: flex-start;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    grid-area: info;
+    // height: calc( 100% - #{$unit});
+    justify-content: flex-start;
+    margin-left: #{$unit};
+    margin-top: #{$unit};
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    width: auto;
+
+    .container__images__info__title {
+        font-family: $f_p;
+        font-weight: 700;
+        margin: 0 0 calc( #{$unit} / 2 ) 0;
+
+        @include respond(hd) {
+            font-size: $title;
+        }
+    }
+    p {
+        width: 80%;
+
+        @include respond(hd) {
+            font-size: $p;
+        }
+    }
+
+    .legend {
+        font-weight: 300;
+    }
+}
