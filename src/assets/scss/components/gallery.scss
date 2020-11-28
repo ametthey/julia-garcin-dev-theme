@@ -10,6 +10,18 @@
     &.is-active {
         opacity: 1;
         z-index: 3;
+
+        .container_images__info {
+            opacity: 1;
+        }
+        .container_images__gallery {
+            opacity: 1!important;
+        }
+        .close-gallery-button {
+            span {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -17,7 +29,7 @@
 .container__images {
     display: grid;
     grid-template-areas:
-    'info image .';
+    'info image button';
     grid-template-columns: 25% 50% 25%;
     grid-auto-rows: auto;
     height: 100%;
@@ -28,12 +40,16 @@
     width: 100%;
     z-index: 0;
 
+    overflow-y: scroll;
+
     @include respond(tablet) {
         grid-template-areas:
         'image'
-        'info';
+        'info'
+        'button';
         grid-template-columns: repeat(1, 1fr);
         grid-auto-rows: min-content;
+        height: 100vh;
     }
 
     .active {
@@ -41,6 +57,24 @@
     }
     .upper--image {
         opacity: 1!important;
+    }
+
+    // close button
+    .close-gallery-button {
+        align-self: start;
+        grid-area: button;
+        justify-self: end;
+        margin-right: 30px;
+        margin-top: 30px;
+
+        span {
+            cursor: pointer;
+            opacity: 0;
+
+            svg {
+                height: 30px;
+            }
+        }
     }
 }
 

@@ -23,5 +23,20 @@
             <?php endif; ?>
 
         </div>
+
+        <div class="about__parutions">
+            <h5>Articles Dream-X</h5>
+
+            <?php if( have_rows('link_container_2' , 'option') ): ?>
+
+                <?php while( have_rows('link_container_2', 'option') ): the_row(); ?>
+
+                    <a href="<?php the_sub_field('link_link'); ?>"><?php the_sub_field('link_text');?></a>
+
+                <?php endwhile; ?>
+
+            <?php endif; ?>
+
+        </div>
     </div>
 </nav>

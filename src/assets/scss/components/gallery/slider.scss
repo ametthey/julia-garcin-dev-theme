@@ -6,6 +6,10 @@
     transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
 
+    &.gallery-is-hovered {
+        opacity: 0.3;
+    }
+
     @include respond(tablet) {
         height: auto;
         margin: 30px auto 0;
